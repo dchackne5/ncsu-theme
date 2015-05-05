@@ -1,0 +1,36 @@
+; INSTRUCTIONS:  Separate multiple values with semicolon and space, i.e. name=Billy Bob; Julie Jane
+
+;-------------------------- Developer / Designer details and contact ----------
+; name, dept, unity, email of main developer or designer of this webspace
+; initial point of contact for issues with this webspace
+;-----------------------------------------------------------
+[Developer]
+name=
+dept=
+unity=
+email=
+
+;-------------------------- Website version control ----------
+; history and version control for this webspace
+; major, minor versions; launch is date (YYYY-MM-DD) that site went public
+;-----------------------------------------------------------
+[Version]
+major=
+minor=
+launch=
+
+;-------------------------- Additional support / maintainers ----------
+; name, dept, unity, email of any others involved in this webspace
+;-----------------------------------------------------------
+[Support]
+name=
+dept=
+unity=
+email=
+
+;-------------------------- Site information, etc ----------
+; url is the main access link, redirects are all other urls that redirect to this site
+;-----------------------------------------------------------
+[Site]
+url=
+redirects=

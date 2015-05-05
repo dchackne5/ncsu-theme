@@ -1,0 +1,151 @@
+/*Credits: Dynamic Drive CSS Library */
+/*URL: http://www.dynamicdrive.com/style/ */
+
+.sidebarmenu ul {
+margin: 0;
+padding: 0;
+list-style-type: none;
+font: bold 13px Verdana;
+background-color: #778;
+}
+ 
+.sidebarmenu ul li {
+position: relative;
+width: 179px; /* Main Menu Item widths */
+border-right: 1px solid #ccc;
+float: left;
+}
+
+/* Top level menu links style */
+.sidebarmenu ul li a {
+display: block;
+overflow: auto; /*force hasLayout in IE7 */
+color: white;
+text-decoration: none;
+padding: 6px;
+}
+
+.sidebarmenu ul li a:link, .sidebarmenu ul li a:visited, .sidebarmenu ul li a:active {
+background-color: #99aa77; /*background of tabs (default state)*/
+}
+
+.sidebarmenu ul li a:visited {
+color: white;
+}
+
+.sidebarmenu ul li a:hover {
+	background-color: #c5bd9d;
+}
+
+/*Sub level menu items */
+.sidebarmenu ul li ul {
+position: absolute;
+width: 179px; /*Sub Menu Items width */
+top: 0;
+visibility: hidden;
+z-index: 1;
+}
+
+.sidebarmenu ul li ul li a {
+margin: 1px 0;
+}
+
+.sidebarmenu a.subfolderstyle {
+background: url(right.gif) no-repeat 97% 50%;
+}
+
+ 
+/* Holly Hack for IE \*/
+* html .sidebarmenu ul li { float: left; height: 1%; }
+* html .sidebarmenu ul li a { height: 1%; }
+/* End */
+
+#wrapper {
+	background-color: #FFFFFF;
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	border-right-width: thin;
+	border-left-width: thin;
+	border-right-style: none;
+	border-left-style: none;
+}
+
+
+#right {
+	float: right;
+	width: 300px;
+	background-color: #FFFFFF;
+}
+#left {
+	width: 500px;
+	float: left;
+	text-align: left;
+	letter-spacing: normal;
+	word-spacing: normal;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-style: normal;
+	white-space: normal;
+	padding-left: 12px;
+	padding-right: 3px;
+	background-color: #FFFFFF;
+}
+
+#black_box {
+	background-attachment: scroll;
+	background-color: #000000;
+	background-image: none;
+	background-repeat: repeat;
+	height: 66px;
+	width: 900px;
+	padding-left: 0px;
+}
+#logo {
+	background-image: url(PB_logo_transparent.gif);
+	height: 41px;
+	width: 524px;
+	padding: 0px;
+	float: left;
+	vertical-align: top;
+}
+
+#bodyArea {
+background-color:#FFF;
+position:relative;
+float:inherit;
+}
+
+#footer {
+	position:relative;
+	top:-16px;
+	height: 102px;
+	width: 899px;
+	background-color:#FFFFFF;
+	float:right;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	font-style: normal;
+	color: #000000;
+	padding-left: 2px;
+}
+
+.sidebar_content {
+	background-color: #99aa77;
+	width: 200px;
+	margin-left: 25px;
+	margin-bottom: 10px;
+}
+
+.sidebar_content2 {
+	background-color: #c5bd9d;
+	width: 200px;
+	margin-bottom: 10px;
+	margin-left: 25px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+p {
+	clear:both;float:none;
+}

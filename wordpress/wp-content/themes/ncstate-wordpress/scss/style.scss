@@ -1,0 +1,34 @@
+/*
+Theme Name: NC State Wordpress Theme
+Theme URI: http://www.webcommdev.com/ncstate-web-templates/
+Description: Official NC State wordpress theme
+Author: NC State Web Communications (Andrew Matthews, Scott Thompson)
+Author URI: http://www.ncsu.edu
+Version: 1.0.3
+
+License: Free to All NC State University staff, students, and departments.
+
+*/
+
+// Core
+@import "bootstrap";
+@import "theme-colors";
+@import "global";
+
+// Modules
+@import "modules/generic";
+@import "modules/rss";
+@import "modules/events";
+@import "modules/social";
+@import "modules/body-copy";
+@import "modules/cross-section";
+
+// Pages and Partials
+@import "header";
+@import "left-nav";
+@import "home";
+@import "page-text";
+@import "single";
+@import "archive";
+@import "sidebar";
+@import "footer";

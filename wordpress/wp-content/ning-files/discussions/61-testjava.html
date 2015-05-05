@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script language="javascript">
+function getCookie(NameOfCookie){
+
+begin = document.cookie.indexOf(NameOfCookie);
+if (begin != -1) 
+{
+  document.write("<p><a href=\"http://webtest.cvm.ncsu.edu/uvis31/\">Link 1 with no restriction</a></p>");
+  document.write("<p><a href=\"http://webtest.cvm.ncsu.edu/uvis31/uvis_patsearch.cfm\">Link 2 with no restriction</a></p>");
+  document.write("<p><a href=\"http://www.ncsu.edu\">Link 3 only shows if wrapped</a></p>");
+//	alert("wrap is on");
+}
+else
+{
+  document.write("<p><a href=\"http://webtest.cvm.ncsu.edu/uvis31/\">Link 1 with no restriction</a></p>");
+  document.write("<p><a href=\"http://webtest.cvm.ncsu.edu/uvis31/uvis_patsearch.cfm\">Link 2 with no restriction</a></p>");
+//	alert("wrap cookie not found");
+}
+}
+
+</script>
+</head>
+
+<body onload="getCookie('WRAP16')">
+
+</body>
+</html>

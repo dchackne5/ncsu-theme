@@ -1,0 +1,547 @@
+/*
+Theme Name: BPD-Unite
+Theme URI: http://oitdesign.ncsu.edu
+Description: Child theme extension of Unite matching NCSU branding
+Author: Brian DeConinck, OIT Design
+Author URI: http://oitdesign.ncsu.edu/
+Template: unite
+Version: 0.0.1
+*/
+
+/* Import Unite theme style.css */
+@import url("../unite/style.css");
+
+
+/* ===============================================================
+
+TABLE OF CONTENTS
+
+0. Global
+	0.1 HTML Elements
+	0.2 Common Classes
+		0.2.1 Default Colors
+	0.3 Bootstrap Corrections
+		[Adjusting Unite's Bootstrap styling to match NCSU Brand]
+
+1. Header
+	1.1 General
+	1.2 NCSU Logo and Title
+	1.3 Site Tagline
+	1.4 Header Search Bar
+	1.5 Social Media
+	1.6 Navigation Bar
+
+2. Posts and Pages
+	2.1 General
+	2.2 Titles
+	2.3 Featured Image
+	2.4 Image Carousel Plugin
+
+3. Sidebars
+
+4. Widgets
+	4.1 General
+	4.2 OIT Child Page Menu Widget
+
+5. Footer
+	5.1 General
+	5.2 Footer Widgets
+
+
+=============================================================== */
+
+/* ================= 0. Global ================= */
+
+/* ================= 0.1 HTML Elements ================= */
+
+body {
+	font-family: 'UniversLight', arial;
+	color: #333333;
+}
+
+a {
+	color: #cc0000;
+}
+
+a:hover, a:active {
+	color: #990000;
+}
+
+p {
+	margin: 1em auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #000000;
+}
+
+blockquote {
+	font-family: 'Glypha LT W01 55 Roman', Georgia, serif;
+	font-size: 1.5em;
+}
+
+/* ================= 0.2 Common Classes ================= */
+
+.section-divider {
+	display: none; /* Temporary-- just tired of the heart. Will remove the heart entirely at some point. */
+}
+
+/* ================= 0.2.1 Default Colors ================= */
+
+/* Switch from Unite's default purples to NCSU colors */
+
+.btn-primary, .label-primary {
+	background-color: #cc0000;
+	border: solid 1px #cc0000;
+}
+
+.btn-primary:hover, .label-primary:hover {
+	background-color: #990000;
+	border: solid 1px #990000;
+}
+
+.entry-meta .fa {
+	color: #cc0000;
+}
+
+.entry-meta .fa:hover {
+	color: #990000;
+}
+
+/* ================= 0.3 Bootstrap/Other Corrections ================= */
+
+/* 
+Out of the box, Unite pre-styles common Bootstrap elements. Some of its styling-- like rounded corners-- doesn't match NCSU brand. Most of the styling is good enough to keep, but some things have to be removed here.
+*/
+
+.btn {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea, .form-control {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+.panel-heading {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+.badge {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+.panel {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+.alert {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+.carousel-control {
+	background: none !important;
+}
+
+.carousel-caption {
+	color: #fff;
+	text-shadow: none;
+}
+
+.carousel-caption a {
+	color: #fff;
+}
+
+.panel-group .panel {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+.panel-default > .panel-heading {
+	border-color: #ccc;
+	background-color: #f2f2f2;
+}
+
+.nav-tabs > li > a {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+.tab-content > .active {
+	border-bottom: solid 1px #ccc;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	padding: 1em 2.5em;
+}
+
+.list-group-item:first-child, .list-group-item:last-child {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+.dl-horizontal dd {
+	margin-bottom: 2em;
+}
+
+/* ================= 1. Header ================= */
+
+/* ================= 1.1 General ================= */
+
+.site-header {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* ================= 1.2 NCSU Logo and Title ================= */
+
+.site-branding {
+	margin-top: 2.5em;
+	margin-bottom: 2.5em;
+}
+
+#logo img.ncsu-logo {
+	float: left;
+	width: 8.214em;
+	padding-right: 1em;
+	vertical-align: middle;
+}
+
+
+@media screen and (max-width: 600px) {
+	.site-branding {
+		width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+	#logo img.ncsu-logo {
+		float: none;
+		padding-right: 0;
+	}
+
+}
+
+.brick-text {
+	float: left;
+	margin: 0;
+	padding: 0 1em 0 0;
+	font-family: UniversCondensed;
+	font-size: 1.7em;
+	font-weight: normal;
+	color: #000;
+	line-height: 1.3em;
+}
+
+.brick2x2 {
+	line-height: 2em;
+}
+
+/* ================= 1.3 Site Tagline ================= */
+
+.site-description {
+	clear: both;
+	float: right;
+	margin: 0;
+	padding: 1em 0em 1em 1em;
+	font-family: UniversCondensed;
+	font-size: 1.2em;
+	font-weight: normal;
+	color: #333;
+	line-height: 1.3em;
+}
+
+@media screen and (max-width: 991px) {
+	.site-description {
+		clear: none;
+		float: none;
+		padding: 1em 0em 1em 0em;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.site-description {
+		clear: both;
+		text-align: center;
+		padding: 1em 1em;
+		width: 100%;
+		float: none;
+	}
+
+	.social-header {
+		padding-left: 0;
+	}
+
+	.ncsu-logo {
+		padding-right: 0;
+	}
+
+	.brick-text {
+		padding-right: 0;
+	}
+}
+
+/* ================= 1.4 Search ================= */
+
+.search-header-content {
+	float: right;
+	margin-top: 1em;
+}
+
+.mobile-search {
+	display: none;
+}
+
+/* ================= 1.5 Social Media ================= */
+
+#social {
+	top: 1em;
+	margin-right: 1em;
+}
+
+.social-header {
+	padding-right: 0;
+}
+
+.mobile-social {
+	display: none;
+}
+
+@media screen and (max-width: 991px) {
+	.social-header {
+		position: relative;
+		width: auto;
+		margin: 0 auto;
+	}
+
+	#social {
+		position: relative;
+		float: right;
+		width: auto;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.search-header-content {
+		width: 40%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.search-header-content {
+		width: 70%;
+		margin: 1em auto;
+		display: none;
+	}
+
+	#social {
+		display: none;
+	}
+
+	.mobile-social {
+		display: block;
+		float: left;
+		line-height: 1em;
+	}
+
+	.mobile-social #social {
+		display: block;
+	}
+
+	.mobile-search {
+		display: block;
+		width: auto;
+		float: left;
+	}
+
+	.mobile-search-icon {
+		font-family: ncsu-icons;
+		color: #fcfcfc;
+		line-height: 2.2em;
+		font-size: 1.5em;
+	}
+
+}
+
+/* ================= 1.6 Navigation Bar ================= */
+
+.menu-item a {
+	font-family: 'UniversRoman', arial;
+}
+
+.navbar.navbar-default {
+	background-color: #cc0000;
+}
+
+.navbar-default .navbar-nav > li > a {
+	border-right: none;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	border-right: none;
+}
+
+.dropdown-menu {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+.navbar-default .navbar-toggle {
+	border: none;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+
+/* ================= 2. Posts and Pages ================= */
+
+/* ================= 2.1 General ================= */
+
+/* ================= 2.2 Titles ================= */
+
+.entry-title {
+	color: #000;
+}
+
+/* ================= 2.3 Featured Image ================= */
+
+.thumbnail {
+	border: none;
+	border-radius: 0px;
+	padding: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* ================= 2.4 Image Carousel Plugin ================= */
+
+.carousel-control {
+	width: 5%;
+}
+
+.carousel-indicators {
+	position: absolute;
+	margin-bottom: 0;
+	bottom: 0;
+}
+
+.carousel-caption {
+	position: absolute;
+	bottom: 1em;
+	left: 5%;
+	padding-bottom: 0;
+}
+
+.carousel-caption h4 {
+	background: rgba(204, 0, 0, 0.7) !important;
+	max-width: 100%;
+	width: auto;
+}
+
+.carousel-caption h4 a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.carousel-caption p {
+	max-width: 100%;
+}
+
+.carousel-caption p a {
+	text-decoration: none;
+}
+
+.carousel-caption p a:hover {
+	color: #fff;
+}
+
+/* ================= 3. Sidebars ================= */
+
+
+
+/* ================= 4. Widgets ================= */
+
+/* ================= 4.1 General ================= */
+
+/* ================= 4.2 OIT Child Page Menu Widget ================= */
+
+.oit-child-menu-parent-link:before {
+	content: 'f';
+	font-family: ncsu-icons;
+	font-size: 0.9em;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+
+.oit-child-menu-parent-link {
+	text-decoration: none;
+	width: 100%;
+	display: block;
+	background-color: #f2f2f2;
+	font-family: 'UniversCondensed';
+	font-size: 1.1em;
+	line-height: 1.65em;
+	color: #666666;
+}
+
+.oit-child-menu-parent-link:hover {
+	color: #ffffff;
+	background-color: #666666;
+}
+
+.oit-child-menu-widget li {
+	list-style: none;
+	padding-left: 2em;
+}
+
+.oit-child-menu-widget li a {
+	text-decoration: none;
+	width: 100%;
+	display: block;
+	font-family: 'UniversCondensed';
+	font-size: 1.1em;
+	line-height: 1.65em;
+	color: #666666;
+}
+
+.oit-child-menu-widget li a:hover {
+	color: #000000;
+}
+
+/* ================= 5. Footer ================= */
+
+/* ================= 5.1 General ================= */
+
+#colophon {
+	background-color: #990000;
+}
+
+/* ================= 5.2 Footer Widgets ================= */
+
+.footer-widgets {
+	text-align: left;
+	margin-bottom: 2em;
+	font-size: 1em;
+}
+
+.footer-widget-title {
+	font-size: 1.5em;
+	margin-bottom: 0;
+}

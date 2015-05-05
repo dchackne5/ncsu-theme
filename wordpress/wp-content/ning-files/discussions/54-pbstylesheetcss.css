@@ -1,0 +1,90 @@
+#wrapper {
+	background-color: #FFFFFF;
+	width: 901px;
+	margin-right: auto;
+	margin-left: auto;
+	border-right-width: thin;
+	border-left-width: thin;
+	border-right-style: none;
+	border-left-style: none;
+}
+
+
+#right {
+	float: right;
+	width: 300px;
+	background-color: #FFFFFF;
+}
+#left {
+	width: 500px;
+	float: left;
+	text-align: left;
+	letter-spacing: normal;
+	word-spacing: normal;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-style: normal;
+	white-space: normal;
+	padding-left: 12px;
+	padding-right: 3px;
+	background-color: #FFFFFF;
+}
+
+#black_box {
+	background-attachment: scroll;
+	background-color: #000000;
+	background-image: none;
+	background-repeat: repeat;
+	height: 66px;
+	width: 901px;
+	padding-left: 0px;
+	float: right;
+}
+#logo {
+	background-image: PB_logo_transparent.gif);
+	height: 41px;
+	width: 524px;
+	padding: 0px;
+	float: left;
+	vertical-align: top;
+}
+
+#bodyArea {
+background-color:#FFF;
+position:relative;
+float:inherit;
+}
+
+#footer {
+	position:relative;
+	top:-16px;
+	height: 75;
+	width: 899px;
+	background-color:#FFFFFF;
+	float:right;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	font-style: normal;
+	color: #000000;
+	padding-left: 2px;
+}
+
+.sidebar_content {
+	background-color: #99aa77;
+	width: 200px;
+	margin-left: 25px;
+	margin-bottom: 10px;
+}
+
+.sidebar_content2 {
+	background-color: #c5bd9d;
+	width: 200px;
+	margin-bottom: 10px;
+	margin-left: 25px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+p{
+	clear:both;float:none;
+}

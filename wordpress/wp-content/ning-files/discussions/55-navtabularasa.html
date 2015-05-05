@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Plant Biology Index</title>
+<link href="pbstylesheetcss.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+//<![CDATA[
+//Nested Side Bar Menu (Mar 20th, 09)
+//By Dynamic Drive: http://www.dynamicdrive.com/style/
+
+var menuids=["sidebarmenu1"] //Enter id(s) of each Side Bar Menu's main UL, separated by commas
+
+function initsidebarmenu() {
+  for (var i=0; i<menuids.length; i++) {
+    var ultags = document.getElementById(menuids[i]).getElementsByTagName("ul");
+      for (var t = 0; t < ultags.length; t++) {
+        ultags[t].parentNode.getElementsByTagName("a")[0].className += " subfolderstyle";
+        if (ultags[t].parentNode.parentNode.id == menuids[i]) { //if this is a first level submenu
+          //ultags[t].style.left = ultags[t].parentNode.offsetWidth + "px"; //dynamically position first level submenus to be width of main menu item
+          ultags[t].style.top = ultags[t].parentNode.offsetHeight + "px"; //dynamically position first level submenus to be width of main menu item
+        }
+        else { //else if this is a sub level submenu (ul)
+          //ultags[t].style.left = ultags[t - 1].getElementsByTagName("a")[0].offsetWidth + "px"; //position menu to the right of menu item that activated it
+          ultags[t].style.top = ultags[t - 1].getElementsByTagName("a")[0].offsetHeight + "px"; //position menu to the right of menu item that activated it
+        }
+        ultags[t].parentNode.onmouseover = function() { this.getElementsByTagName("ul")[0].style.display = "block"; }
+        ultags[t].parentNode.onmouseout = function() { this.getElementsByTagName("ul")[0].style.display = "none"; }
+    }
+  }
+  for (var t = ultags.length - 1; t > -1; t--) { //loop through all sub menus again, and use "display:none" to hide menus (to prevent possible page scrollbars
+    ultags[t].style.visibility = "visible";
+    ultags[t].style.display = "none";
+  }
+}
+
+if (window.addEventListener)
+window.addEventListener("load", initsidebarmenu, false)
+else if (window.attachEvent)
+window.attachEvent("onload", initsidebarmenu)
+//]]>
+</script>
+
+
+
+<style type="text/css">
+<!--
+body {
+	background-color: #FFFFFF;
+}
+.style2 {font-family: Verdana, Arial, Helvetica, sans-serif}
+
+.style21 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small; }
+.style24 {color: #333333}
+.style25 {
+	font-size: small;
+	font-weight: bold;
+	color: #666666;
+}
+.style26 {color: #666666}
+.style27 {color: #000000}
+.style28 {font-size: small}
+-->
+</style>
+
+<link rel="stylesheet" type="text/css" href="http://www.ncsu.edu/brand/utility-bar/iframe/css/utility_bar_iframe.css" media="screen" /> 
+</head>
+<body>
+<iframe name="ncsu_branding_bar" id="ncsu_branding_bar" frameborder="0" src="http://www.ncsu.edu/brand/utility-bar/iframe/index.php?color=red_on_white&amp;inurl=www.ncsu.edu/plantbiology/index.html&amp;center=yes" scrolling="no">  
+Your browser does not support inline frames or  
+is currently configured  not to display inline frames.<br /> 
+Visit <a href="http://ncsu.edu/">http://www.ncsu.edu</a>.
+</iframe>
+
+
+
+
+<div id="wrapper" align="center">
+<div id="black_box" align="left">
+  <div id="logo"><img src="New Folder (2)/PB_logo_transparent.gif" alt="Plant Biology Home" width="" height="59" align="left" /></div>
+  <!-- closing "black_box" DIV -->
+</div>
+<div id="header_photo"><img src="New Folder (2)/flytrapbanner.gif" alt="" />
+  <!-- the alt-text attribute of this image was intentionally left blank for Internet Explorer compatibility... 
+	alt text for the background image was displaying on top of navigation links,
+	even though the z-index of the navigation list is higher than the photo -->
+      <!-- closing "header_photo" DIV -->
+</div>
+<div style="clear:both;"> </div>
+
+<div style="text-align:center;">
+<div id="bodyArea">
+<div id="left">
+ <div class="sidebarmenu">
+<ul id="sidebarmenu1">
+<li><a href="#">General</a>
+<ul>
+  <li><a href="#">Overview of Department</a></li>
+  <li><a href="#">Department History</a></li>
+  <li><a href="#">Current Faculty, Staff & Students</a></li>
+  <li><a href="#">Seminar Schedule</a></li>
+  <li><a href="#">B.W. Wells Exhibit</a></li>
+  </ul></li>
+<li><a href="#">Academics</a>
+<ul>
+  <li><a href="#">Undergraduate Program</a></li>
+  <li><a href="#">Graduate Program</a></li>
+  <li><a href="#">Funding Opportunities</a></li>
+  <li><a href="#">Study Abroad</a></li>
+  <li><a href="#">K-12 Outreach</a></li>
+</ul></li>
+<li><a href="#">Research </a>
+  <ul>
+  <li><a href="#">Faculty Research</a></li>
+  <li><a href="#">Special Facilities</a></li>
+  <li><a href="#">Centers</a></li>
+  <li><a href="#">Funding Opportunities</a></li>
+  <li><a href="#">Biotechnology</a></li>
+  </ul></li>
+<li><a href="#">Herbarium</a>
+<ul>
+  <li><a href="#">Home Page</a></li>
+  <li><a href="#">Plant ID</a></li>
+  </ul></li>
+<li><a href="#">People</a>
+  <ul>
+  <li><a href="#">Faculty</a></li>
+  <li><a href="#">Adjunct Faculty</a></li>
+  <li><a href="#">Researchers & Post Docs</a></li>
+  <li><a href="#">Lab Support</a></li>
+  <li><a href="#">Graduate Students</a></li>
+  <li><a href="#">Department Staff</a></li>
+  <li><a href="#">Emeriti</a></li>
+   </ul>
+  </li>
+</ul>
+</div>
+ 	
+  	</div>
+    <br />
+  </div>
+<div id="right">
+  <p>
+    <!--- Insert a small image that will say read more and link to lab website-->
+    <span class="style2"><strong>Welcome to the  Department of Plant Biology
+    at North Carolina State University! </strong></span></p>
+  <p><font size="2"><span class="style2">We offer Bachelor of Science, Master
+        of Science and Doctor of Philosophy degrees, with classroom and research
+        opportunities in many areas of contemporary plant biology. Need more
+      information? Contact <a href="mailto:christine_brownfield@ncsu.edu"> plantbio_info@ncsu.edu</a></span></font></p>
+  <p><br />
+  </p>
+  <hr/>
+  <p><span class="style2"><strong>Recent News</strong></span><br />
+      <br />
+      <span class="style2 style28">Nunc luctus, tellus quis volutpat ultricies, leo sapien sagittis justo, vitae
+        suscipit justo magna ac dolor. Maecenas libero est, consectetur auctor, rutrum
+        in, laoreet eu, diam. Ut tempor, lorem sagittis ultrices lacinia, purus nisl
+        suscipit nibh, vitae dapibus diam enim in velit. Nunc lacus. Fusce diam nibh,
+        rutrum eget, pellentesque at, varius vitae, lectus. Vestibulum porta. Donec lorem
+        ipsum, rutrum a, gravida id, consequat vitae, magna. Donec tempor enim. Sed urna.
+        Proin eu pede. Aliquam a nisi. Nullam ipsum urna, vestibulum hendrerit, tincidunt
+        vel, ornare et, pede. Etiam neque lacus, convallis ut, dapibus sit amet, viverra
+        in, urna.        </span></p>
+          <p><br />
+</p>
+<hr/>
+</div>
+<div style="clear: both;"></div>
+</div>
+<div id="footer" align="center">
+    <div class="footer_text">        
+      <div align="left" style="margin-bottom: 10px"></div>
+    <div style="clear: both;"></div>
+  </div>
+  <div class="style21 style24" id="copyright_and_credits"><hr /><br />
+    <span class="style25 style27">Department of Plant
+    Biology 2115 Gardner Hall Box 7612 North Carolina State University Raleigh,
+    NC 27695 <br />
+Phone: 919-515-2727 Fax: 919-515-3436 </span><span class="style26 style27"><br />
+All website content &copy; 2009
+    Department of Plant Biology North Carolina State University Last updated
+    on
+<!-- #BeginDate format:Am1 -->July 28, 2009<!-- #EndDate -->
+    by <a href="mailto:christine_brownfield@ncsu.edu">Webmaster</a></span><span class="style27"><br />
+    <br />
+    </span><br />
+  </div>
+</div>
+</div>
+
+
+
+<span class="style26"></span>
+<!--Before publishing add Google analystics code on all pages-->
+<br />
+
+</body>
+</html>

@@ -1,0 +1,708 @@
+body, h1, h2, h3, h4, p, {
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	color: #000;
+	background-color: #FFF;
+	background-repeat: repeat-x;
+	text-align: center;
+}
+
+img {
+	border:none;
+}
+
+#wrapper {
+	width: 900px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	text-align:left;
+	height: auto;
+}
+
+#ia_header {
+	background-image: url(../images/header.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 154px;
+}
+
+#ia_header img{
+	text-decoration: none;
+	border-style:none
+}
+
+#ia_header span {
+	position: absolute;
+	left: -3000px;
+	background-repeat: no-repeat;
+}
+#form1 {
+	padding: 0;
+	margin: 0;
+}
+#nav_header {
+	height: 30px;
+	/*width: 900px;*/
+}
+
+/*XXXXXXXXXXXX Primary top nav rules XXXXXXXXXXX*/
+
+.nav {
+	position: relative;
+	background-image: url(../images/nav_bar.jpg);
+	background-repeat: repeat-x;
+	border: 1px solid #000; /* borders the bottom of the top nav */
+	border-width: 1px 0;
+	width: 100%;	
+	height: 32px;
+	list-style-type: none; 
+	
+	}
+
+.button {
+	width: 150px;
+	float: left;
+	}
+
+.parent {position: relative;}
+/* this parent div does not provide "sticky hovering", but instead fixes a
+strange bug in Op7. When an element serves as a hovered popup "parent" element,
+that element must not also be floated or all heck breaks loose in Opera 7.
+To prevent this, we have floated the top level list items, while nesting
+hoverable parent divs inside that are then hovered to generate the dropdowns.
+Thus the ugly (but interesting) Op7 bug is defeated. */
+
+.floatfix {margin-right: -3px;}
+/* this fixes the IE 3px bug that is common in this type of float arrangement */
+
+/*XXXXXXXXXXXX Primary dropdown/flyout rules XXXXXXXXXXX*/
+
+.dropdown { /* rules for dropdown div */
+	width: 220px;
+	position: absolute;
+	left: -3000px;
+	top: 25px; /* puts dropdowns directly under top nav */
+	text-align: left; /* needed because IE misapplies text centering to boxes */
+	/*background-image: url(../images/nav_bar.jpg);*/
+	background:#000;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	 display:block;
+	}
+
+.dropdown div {
+	width: 220px;
+	position: absolute;
+	left: -3000px;
+	top: 0;
+	/*background-image: url(../images/nav_bar.jpg);*/
+	background:#000;
+	text-align: left; /* needed because IE misapplies text centering to boxes */
+	padding-top: 5px;
+	display:table-row;
+	list-style-type: none;
+	}
+
+/* The margins on the UL's replace the div paddings to create "sticky hovering"
+zones,  and the margins should "fill" the divs, making the IE BG fix unnecessary.
+Unfortunately the BG fix is still needed, altho this method does eliminate
+possible box model problems */
+
+.dropdown ul {
+  width: 220px; /* tweaked so that dropdowns appear to "line up" with top links */
+  margin: 0 5px 5px 5px; /* creates "sticky hovering" zones for dropdowns */
+  /*border: 1px solid #888;*/
+  border-width: 1px 1px 0;
+ 
+  vertical-align:middle;
+  } /* borders sides and top of the dropdowns and flyouts; links provide the bottom border */
+
+.dropdown div ul {margin: 1px 1px 1px 0;} /* creates "sticky hovering" zones for flyouts */
+
+.four .dropdown ul {width: 150px; height:32px;} /* modifies width for rightmost "visible" dropdown (tweak) */
+
+.four .dropdown div ul {margin: 1px 0 1px 1px; position: relative;} /* rule reversal for "visible" right drop flyouts */
+
+.nav li {text-align: center; color: #FAF; vertical-align:center; list-style-type: none; }
+
+.dir_sub {
+	background-image:url(../images/red_arrow.gif);
+	background-position: 95% 95%;
+	 background-repeat: no-repeat;
+}
+.nav a {
+  display: block;
+  color: #FFF;
+	font-weight: bold;
+	font-size: 1em;
+	text-decoration: none;
+	padding: 6px 0 5px;
+	/*border-right: 1px solid #888;  /* makes the dividers between the top nav links */
+	}
+
+.four a {border-right: 0;} /* kills right border on last top link */
+
+.nav ul ul a {
+	color: #FFF;
+	border-right: 0; /* negates right border for dropdowns and flyouts */
+	list-style-type: none;
+	text-align:left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+  }
+
+.dropdown li, .dropdown li:active {
+  position: relative;
+  vertical-align: middle; /* IE5/win bugfix */
+	display:block;
+  }
+
+.parent:hover {background:none;}
+/* this hover calls a transparent GIF only to defeat the IE failed hover bug. Any
+background change on hovering div.parent will make IE obey and display the dropdown.
+While the call itself will fix the bug, make sure you actually call a real image
+file so that your site error logs will not fill with failed image calls. */
+
+.parent:hover div.dropdown {left: -31px;} /* hover rule for dropdowns */
+/* extra pixel makes dropdowns "line up" with top links */
+
+.dropdown li:hover div, .dropdown li:active ul { /* hover rule for flyouts */
+	left: 200px; /* this value controls the amount of flyout "overlap" */
+	top: 0px; /* this value controls the amount of flyout vertical offset */
+	display:block;
+	}
+
+
+
+.four li:hover div { /* reversed flyout rules for rightmost drop flyouts */
+	left: -210px;
+	top: -26px;
+	}
+
+.nav div.mini-zone { /* special hover zone that covers the "danger corner" */
+  padding: 0;
+  width: 15px;
+	height: 15px;
+	font-size: 1px;
+	left: -3000px;
+	bottom: -15px;
+	top: auto;
+	background: url(../images/nav_bar.jpg);
+	}
+
+.nav .dropdown li:hover div.mini-zone { /* hover rule for mini-zones */
+	left: auto;
+	right: 1px;
+	top: auto;
+	}
+
+.nav .four li:hover div.mini-zone { /* reversed hover rule for rightmost drop mini-zones */
+	left: 8px;
+	}
+
+.dropdown li:hover {background: #CCC;} /* hover color effect on dropdown links */
+
+.dropdown div li:hover {background: #556677;} /* hover color effect on flyout links */
+
+
+/*XXXXXXXXXXX Primary dropdown backgrounds XXXXXXXXXX*/
+/*
+.one ul {background: #d79b00;}
+.two ul {background: #459;}
+.three ul {background: #4a3;}
+.four ul {background: #790000;}
+.dropdown div ul {background: #eda;} /* colors BG of flyouts */
+/*.dropdown div ul a {color: #400;} /* colors text of  flyouts */
+
+
+/*XXXXXXXXXX z-index rules for top nav XXXXXXXXXXX
+
+.one {z-index: 10;}
+.two {z-index: 20;}
+.three {z-index: 30;}
+.four {z-index: 40;}
+.four:hover {z-index: 20;}
+/* this last is a special trick that reverses the stacking order of the rightmost
+top link when it or its children are hovered. This, and the previous rules work
+together so that when a user is on the top link of any flyout, they can move
+vertically to the top link directly above and not have the sticky hoivering zone
+on the flyout get in the way of hovering that top link. */
+
+
+/*XXXXXXXXXXX Special fixes XXXXXXXXXXX*/
+
+/* This is to hide the following from IE/Mac. \*/
+* html .button .dropdown li {
+height: 1%;
+margin-left: -16px;
+mar\gin-left: 0;
+}
+/* */
+
+* html .nav a
+ {height: 1%;}
+
+/* The first 2 rules above fix "bullet region" problems in IE5.x/win,
+and the 2nd is to make all links fully clickable. */
+
+.brclear { /* Use a break with this class to clear float containers */
+clear:both;
+height:0;
+margin:0;
+font-size: 1px;
+line-height: 0;
+}
+
+/*\*/ /*/
+.nav .dropdown, .nav .dropdown div {width: 189px;}
+.nav .button .dropdown ul {margin: 0px;}
+.nav .dropdown, .nav .dropdown div {position: static;}
+.nav .dropdown ul {border: 0;}
+.mini-zone {display: none;}
+/* this rule block "dumbs down" the nav for IEmac */
+
+
+#ncsu_header {
+	width:900px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:left;
+	padding-bottom:30px;
+	vertical-align:middle;
+	overflow:hidden;
+	height:1px;
+
+}
+#inner_wrapper {
+	float: left;
+	width: 900px;
+	height: auto;
+	padding-top: 1px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin: 0 auto;
+	background-image: url(../images/left_bar_black.jpg);
+	background-repeat: repeat;
+	background-position: left top;
+}
+
+
+#side_bar {
+	width: 155px;
+	float: left;
+	height: auto;
+}
+
+#quick1, #quick2, #quick3, #quick4, #quick5 {
+	width: 125px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 5px;
+	margin-top: 10px;
+	padding-bottom:40px;
+}
+
+#quick1 {
+	padding-bottom:20px;	
+}
+#quick4 {
+	padding-bottom:20px;	
+}
+
+/****************** bread crumbs ********************************/
+#bread_crumbs a {
+	text-decoration: none;
+	color: #CC0000;
+	font-weight: normal; 
+}
+#bread_crumbs a:hover {
+	text-decoration: underline;
+	color: #000099;
+}
+#bread_crumbs {
+	font-size: 85%;
+	text-decoration: none;
+	color: #000000;
+	padding: 0px 0px 0px;
+	font-weight: normal;
+	margin-left: 0px;
+	margin-top: 5px;		
+}
+/****************** bread crumbs ********************************/
+
+#main_content1 {
+	width: 720px;
+	min-height: 675px;
+	background-image: url(../images/content.jpg);
+	background-repeat: repeat-y;
+	background-position: right top;
+	float: right;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-right: 10px;
+	
+}
+#main_content #brochure_flash{
+	margin-top: 0px;
+	margin-right: 25px;
+	margin-bottom: 0px;
+	margin-left: 50px;
+}
+
+#main_content img.org_chart{
+	text-align:center;
+	vertical-align:middle;
+	margin-right: auto;
+	margin-left: auto;	
+	display:block
+}
+
+#main_content #home_flash {
+	width: 470px;
+	padding-top: 15px;
+	padding-left: 15px;
+	float: left;
+	margin-top:15px;
+	border: thin solid #000;
+}
+#main_content #tip_month {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	float: right;
+	margin-left: 5px;
+	margin-top:15px;
+	width: 180px;
+	font-size: 80%;
+	height:300px;
+}
+
+#main_content #marquee_main {
+	padding-botom: 5px;
+}
+
+#main_content #tip_month strong.monthTip {
+	font-size: 160%;
+}
+
+#main_content #hotline_contact label{
+	width: 7em;
+	float: left;
+	text-align: right;
+	margin-right: 0.5em;
+	display: block
+}
+
+#main_content #hotline_contact input
+{
+color: #OOOOOO;
+background: #CCDDAA;
+border: 1px solid #781351
+}
+
+#main_content #hotline_detail {
+	margin: 0 auto;
+	text-align:left;
+	width:650px;
+	padding:0;
+}
+
+#main_content #hotline_detail label {
+	width: 25em;
+	text-align: left;
+	margin-right: 0.5em;
+	display: block}
+
+#main_content #hotline_detail input {
+	color: #OOOOOO;
+	background: #CCDDAA;
+	border: 1px solid #781351
+}
+
+#main_content #hotline_detail textarea {
+	color: #OOOOOO;
+	background: #CCDDAA;
+	border: 1px solid #781351
+}
+#main_content #hotline_detail .submit input
+{
+color: #000;
+background: #CC9900;
+border: 2px outset #d7b9c9
+height: 5em;
+width: 5em;
+} 
+
+
+
+#main_content #op_liaison {
+
+	width: 250px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	/*float: left; */
+	margin-top:15px;
+	margin-left: 5px;
+	border: thin solid #000;
+	font-size: 90%;
+}
+#main_content #it_liaison {
+
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	/*float: right; */
+	margin-left: 5px;
+	margin-top:15px;
+	width: 250px;
+	font-size: 90%;
+	border: thin solid #000;
+	
+
+}
+#footer_nav {
+	background-image: url(../images/footer2.jpg);
+	background-repeat: repeat-x;
+	height: 30px;
+	padding-top: 10px;
+	padding-right: 2px;
+	padding-bottom: 5px;
+	padding-left: 125px; 
+	
+}
+#footnav {
+
+	list-style:none;
+	padding-top: 0px;
+	padding-right: 0;
+	padding-bottom: 6px;
+	padding-left: 1px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;	
+}
+
+#footnav ul{
+	display:block;
+}
+
+
+#footnav li {
+	float:left;
+	font-size:.78em;
+	padding:3px 8px 3px 7px;
+	background:url(../images/grey_lines.gif) no-repeat right center;
+	color:#FFF;
+	vertical-align: top;
+	text-align: left;
+}
+
+#footnav li.last {
+	background:none;
+	padding-right:0;
+
+}
+#footnav li a {
+	color:#FFF;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+
+#footnav li a.first {
+	color:#FFF;
+	text-decoration: none;
+	text-transform: none;
+}
+
+
+#footnav li a:hover {
+	text-decoration:underline;
+	}
+
+
+.tdback {
+	background-image: url(../nav_bar/nav_bar_r1_c6.jpg);
+}
+
+.clearfloat {
+	font-size: 1px;
+	line-height: 0px;
+	clear: both;
+	height: 0px;
+}
+
+.clearDiv {
+	clear: both;
+	width: 0px;
+	height: 0px;
+	margin: 0px;
+}
+
+/****************** Liaison List ********************************/
+.lm-wrapper { margin:0; padding:0; }
+.lm-wrapper .lm-letters { overflow:hidden; }
+* html .lm-wrapper .lm-letters { zoom:1; } /* for IE6 so that menu appears under letters */
+.lm-wrapper .lm-letters a { font-size:0.9em; display:block; float:left; padding:1px 7px; border:1px solid silver; border-right:none; text-decoration:none; }
+.lm-wrapper .lm-letters a:hover,
+.lm-wrapper .lm-letters a.lm-selected { background-color:#eaeaea; }
+.lm-wrapper .lm-letters a.lm-disabled { color:#ccc; }
+.lm-wrapper .lm-letters a.lm-last { border-right:1px solid silver; }
+.lm-wrapper .lm-letter-count { text-align:center; font-size:0.8em; line-height:1; margin-bottom:3px; color:#336699; }
+
+.lm-wrapper .lm-menu { border:1px solid silver; border-top:1px solid silver; padding:15px; z-index:10; position:absolute; margin-top:-1px; background:#ffc; display:none; }
+.lm-wrapper .lm-menu ul li { list-style-type:none; margin-bottom:15px; font-size:0.8em }
+.lm-wrapper .lm-menu ol li { margin-left:15px; }
+.lm-wrapper .lm-menu .lm-no-match { color:green; }
+.lm-wrapper .lm-menu a { text-decoration:none; }
+.lm-wrapper .lm-menu a:hover { text-decoration:underline; }
+.lm-wrapper .lm-menu .lm-submenu { overflow:hidden; }
+.lm-wrapper .lm-menu ul li p { padding-bottom:0; }
+.lm-wrapper .lm-menu ul li { border:1px solid silver; padding:5px; }
+.lm-wrapper .lm-menu ul li a { font-weight:bold; }
+/****************** Liaison List ********************************/
+
+/****************** IT Self Assessment Tools ********************************/
+.treeview, .treeview ul { 
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.treeview ul {
+	background-color: white;
+	margin-top: 4px;
+}
+
+.treeview .hitarea {
+	background: url(../images/treeview_images/treeview-default.gif) -64px -25px no-repeat;
+	height: 16px;
+	width: 16px;
+	margin-left: -16px;
+	float: left;
+	cursor: pointer;
+}
+/* fix for IE6 */
+* html .hitarea {
+	display: inline;
+	float:none;
+}
+
+.treeview li { 
+	margin: 0;
+	padding: 3px 0pt 3px 16px;
+}
+
+.treeview a.selected {
+	background-color: #eee;
+}
+
+#treecontrol { margin: 1em 0; display: none; }
+
+.treeview .hover { color: red; cursor: pointer; }
+
+.treeview li { background: url(../images/treeview_images/treeview-default-line.gif) 0 0 no-repeat; }
+.treeview li.collapsable, .treeview li.expandable { background-position: 0 -176px; }
+
+.treeview .expandable-hitarea { background-position: -80px -3px; }
+
+.treeview li.last { background-position: 0 -1766px }
+.treeview li.lastCollapsable, .treeview li.lastExpandable { background-image: url(../images/treeview_images/treeview-default.gif); }  
+.treeview li.lastCollapsable { background-position: 0 -111px }
+.treeview li.lastExpandable { background-position: -32px -67px }
+
+.treeview div.lastCollapsable-hitarea, .treeview div.lastExpandable-hitarea { background-position: 0; }
+
+.treeview-red li { background-image: url(../images/treeview_images/treeview-red-line.gif); }
+.treeview-red .hitarea, .treeview-red li.lastCollapsable, .treeview-red li.lastExpandable { background-image: url(../images/treeview_images/treeview-red.gif); } 
+
+.treeview-black li { background-image: url(../images/treeview_images/treeview-black-line.gif); }
+.treeview-black .hitarea, .treeview-black li.lastCollapsable, .treeview-black li.lastExpandable { background-image: url(../images/treeview_images/treeview-black.gif); }  
+
+.treeview-gray li { background-image: url(images/treeview-gray-line.gif); }
+.treeview-gray .hitarea, .treeview-gray li.lastCollapsable, .treeview-gray li.lastExpandable { background-image: url(../images/treeview_images/treeview-gray.gif); } 
+
+.treeview-famfamfam li { background-image: url(images/treeview-famfamfam-line.gif); }
+.treeview-famfamfam .hitarea, .treeview-famfamfam li.lastCollapsable, .treeview-famfamfam li.lastExpandable { background-image: url(../images/treeview_images/treeview-famfamfam.gif); } 
+
+
+.filetree li { padding: 3px 0 2px 16px; }
+.filetree span.folder, .filetree span.file { padding: 1px 0 1px 16px; display: block; }
+.filetree span.folder { background: url(../images/treeview_images/folder.gif) 0 0 no-repeat; }
+.filetree li.expandable span.folder { background: url(../images/treeview_images/folder-closed.gif) 0 0 no-repeat; }
+.filetree span.file { background: url(../images/treeview_images/file.gif) 0 0 no-repeat; }
+/****************** IT Self Asessment Tools ********************************/
+
+ul.tree, ul.tree * {
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 5px 0;
+}
+ul.tree img.arrow {
+	padding: 2px 0 0 0;
+	border: 0;
+	width: 20px;
+}
+ul.tree li {
+	padding: 4px 0 0 0;
+}
+ul.tree li ul {
+	padding: 0 0 0 20px;
+	margin: 0;
+}
+ul.tree label {
+	cursor: pointer;
+	font-weight: bold;
+	padding: 2px 0;
+}
+ul.tree label.hover {
+	color: red;
+}
+p {
+	margin: 5px 15px;
+}
+ul {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+ul.tree li .arrow {
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	float: left;
+	background: transparent no-repeat 0 4px;
+}
+ul.tree li .collapsed {
+	background-image: url(../images/checktree/collapsed.gif);
+}
+ul.tree li .expanded {
+	background-image: url(../images/checktree/expanded.gif);
+}
+
+ul.tree li .checkbox {
+	width: 20px;
+	height: 18px;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	float: left;
+	background: url(../images/checktree/check0.gif) no-repeat 0 0px;
+}
+ul.tree li .checked {
+	background-image: url(../images/checktree/check2.gif);
+}
+ul.tree li .half_checked {
+	background-image: url(../images/checktree/check1.gif);
+}
